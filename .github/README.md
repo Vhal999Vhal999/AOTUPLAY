@@ -1,22 +1,22 @@
 <div align="center">
 
-<img src="https://h.uguu.se/rbricwLU.jpg" width="100%" alt="Radha Music Banner">
+<img src="https://h.uguu.se/rbricwLU.jpg" width="100%" alt="Dreamm Music Banner">
 
-# ✨ QUEEN X MUSIC ♪
+# ✨ DREAMM MUSIC ♪
 
 ### ᴘʀᴇᴍɪᴜᴍ • ꜰᴀꜱᴛ • ꜱᴛᴀʙʟᴇ • ᴇʟᴇɢᴀɴᴛ
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=25&duration=3000&pause=1000&color=F7C873&center=true&vCenter=true&width=900&lines=Premium+Telegram+Music+Bot;Crystal+Clear+Music+Streaming;Video+Streaming+%26+Voice+Chat;Modern+Premium+Experience;Made+With+❤+By+Madara" />
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=700&size=25&duration=3000&pause=1000&color=F7C873&center=true&vCenter=true&width=900&lines=Premium+Telegram+Music+Bot;Crystal+Clear+Music+Streaming;Video+Streaming+%26+Voice+Chat;Modern+Premium+Experience;Made+With+❤+By+Yash" />
 
 <p align="center">
 
-<img src="https://img.shields.io/github/stars/USERNAME/Radha-Music?style=for-the-badge&logo=github&color=FFD700">
+<img src="https://img.shields.io/github/stars/yashcodex121/dreamm?style=for-the-badge&logo=github&color=FFD700">
 
-<img src="https://img.shields.io/github/forks/USERNAME/Radha-Music?style=for-the-badge&logo=github&color=F4A261">
+<img src="https://img.shields.io/github/forks/yashcodex121/dreamm?style=for-the-badge&logo=github&color=F4A261">
 
-<img src="https://img.shields.io/github/issues/USERNAME/Radha-Music?style=for-the-badge&color=E76F51">
+<img src="https://img.shields.io/github/issues/yashcodex121/dreamm?style=for-the-badge&color=E76F51">
 
-<img src="https://img.shields.io/github/license/USERNAME/Radha-Music?style=for-the-badge&color=2A9D8F">
+<img src="https://img.shields.io/github/license/yashcodex121/dream?style=for-the-badge&color=2A9D8F">
 
 <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python">
 
@@ -28,9 +28,9 @@
 
 </div>
 
-# 🌸 About Radha Music
+# 🌸 About Dreamm Music
 
-Radha Music is a next-generation Telegram Music Bot built for speed, beauty and reliability.
+Dreamm Music is a next-generation Telegram Music Bot built for speed, beauty and reliability.
 
 Enjoy lag-free playback, premium buttons, crystal-clear audio, beautiful interface and powerful management features.
 
@@ -100,7 +100,7 @@ https://files.catbox.moe/n9qfuo.mp4
 
 <p align="center">
 
-<img src="assets/radha.jpg" width="450">
+<img src="assets/dreamm.jpg" width="450">
 
 </p>
 
@@ -109,13 +109,13 @@ https://files.catbox.moe/n9qfuo.mp4
 # 🚀 Installation
 
 ```bash
-git clone https://github.com/USERNAME/Radha-Music
+git clone https://github.com/yashcodex121/dreamm.git
 
-cd Radha-Music
+cd dreamm
 
 pip install -r requirements.txt
 
-python3 -m Radha
+python3 -m Dreamm
 ```
 
 ---
@@ -154,7 +154,7 @@ python3 -m Radha
 
 ---
 
-# 💎 Why Choose Radha Music?
+# 💎 Why Choose Dreamm Music?
 
 ⭐ Crystal Clear Audio
 
@@ -183,12 +183,10 @@ python3 -m Radha
 ### 💜 Deploy to Heroku
 
 <p align="center">
-  <a href="https://dashboard.heroku.com/new?template=https://github.com/Vhal999Vhal999/QUEENNEWMUSIC">
+  <a href="https://dashboard.heroku.com/new?template=https://github.com/yashcodex121/dreamm.git">
     <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku">
   </a>
 </p>
-
-> **Note:** Replace `USERNAME` with your GitHub username.
 
 ### 🌍 Other Platforms
 
@@ -214,13 +212,25 @@ python3 -m Radha
 
 ---
 
+# 👥 Contributors
+
+<p align="center">
+  <a href="https://github.com/yashcodex121">
+    <img src="https://img.shields.io/badge/Contributor-Yash-blueviolet?style=for-the-badge&logo=github">
+  </a>
+</p>
+
+- **Yash** — [@yashcodex121](https://github.com/yashcodex121)
+
+---
+
 <div align="center">
 
 ## 💖 Support The Project
 
-If you like **Radha Music**, please give this repository a ⭐.
+If you like **Dreamm Music**, please give this repository a ⭐.
 
-Made with ❤️ by **Madara**
+Made with ❤️ by **Yash**
 
 <img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=140&color=gradient&customColorList=17,18,19,20"/>
 
