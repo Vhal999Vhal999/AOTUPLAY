@@ -32,18 +32,76 @@
 
 Dream Music is a next-generation Telegram Music Bot built for speed, beauty and reliability.
 
+Enjoy lag-free playback, premium buttons, crystal-clear audio, beautiful interface and powerful management features.
+
+Designed to provide one of the smoothest music experiences on Telegram.
+
 ---
 
 # 🎥 Demo Video
 
+> **If GitHub doesn't display the video player, click the link below.**
+
 https://files.catbox.moe/n9qfuo.mp4
+
+<video src="https://files.catbox.moe/n9qfuo.mp4" controls autoplay muted loop width="100%"></video>
+
+---
+
+# ✨ Features
+
+### 🎵 Music
+
+- HQ Audio Streaming
+- Video Streaming
+- Live Stream
+- Queue System
+- Loop Playback
+- Playlist Support
+- Shuffle Queue
+- Volume Control
+- Seek Music
+- Auto Resume
+
+### 🎬 Videos
+
+- HD Video Playback
+- Stream from YouTube
+- Live Video Chat
+- Smooth Buffering
+
+### 🤖 Smart
+
+- Lyrics
+- Song Download
+- Artist Information
+- Auto Playlist
+- Recommendation System
+
+### 🛡 Security
+
+- Anti Spam
+- Anti Flood
+- Group Protection
+- Secure Environment
+- Fast Recovery
+
+### 💎 Premium
+
+- Premium Buttons
+- Premium Emojis
+- Beautiful UI
+- Lightning Fast
+- Optimized Performance
 
 ---
 
 # 📸 Preview
 
 <p align="center">
+
 <img src="assets/dreamm.jpg" width="450">
+
 </p>
 
 ---
@@ -58,3 +116,122 @@ cd dream
 pip install -r requirements.txt
 
 python3 -m SHUKLAMUSIC
+```
+
+---
+
+# ⚙ Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| API_ID | Telegram API ID |
+| API_HASH | Telegram API HASH |
+| BOT_TOKEN | Telegram Bot Token |
+| STRING_SESSION | Assistant String |
+| MONGO_DB_URI | Mongo Database |
+| OWNER_ID | Owner ID |
+| LOG_GROUP_ID | Logger Group |
+| SUPPORT_CHAT | Support Group |
+
+---
+
+# 🎵 Commands
+
+| Command | Description |
+|---------|-------------|
+| /play | Play Music |
+| /vplay | Play Video |
+| /pause | Pause |
+| /resume | Resume |
+| /skip | Skip Song |
+| /queue | Queue List |
+| /end | Stop Playback |
+| /lyrics | Lyrics |
+| /song | Download Song |
+| /ping | Ping |
+| /stats | Statistics |
+| /alive | Bot Status |
+
+---
+
+# 💎 Why Choose Dream Music?
+
+⭐ Crystal Clear Audio
+
+⭐ Fastest Playback
+
+⭐ Elegant UI
+
+⭐ Video Streaming
+
+⭐ Playlist Support
+
+⭐ Queue Management
+
+⭐ Secure & Stable
+
+⭐ Open Source
+
+⭐ Easy Deployment
+
+⭐ Premium Experience
+
+---
+
+# 🚀 Deploy
+
+### 💜 Deploy to Heroku
+
+<p align="center">
+  <a href="https://dashboard.heroku.com/new?template=https://github.com/yashcodex121/dream.git">
+    <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku">
+  </a>
+</p>
+
+### 🌍 Other Platforms
+
+- VPS
+- Railway
+- Render
+- Docker
+- Local Machine
+
+---
+
+# 📊 Repository Stats
+
+⭐ Star the Repository
+
+🍴 Fork the Repository
+
+🐞 Report Bugs
+
+💡 Suggest Features
+
+❤️ Contribute
+
+---
+
+# 👥 Contributors
+
+<p align="center">
+  <a href="https://github.com/yashcodex121">
+    <img src="https://img.shields.io/badge/Contributor-Yash-blueviolet?style=for-the-badge&logo=github">
+  </a>
+</p>
+
+- **Yash** — [@yashcodex121](https://github.com/yashcodex121)
+
+---
+
+<div align="center">
+
+## 💖 Support The Project
+
+If you like **Dream Music**, please give this repository a ⭐.
+
+Made with ❤️ by **Yash**
+
+<img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=140&color=gradient&customColorList=17,18,19,20"/>
+
+</div>
