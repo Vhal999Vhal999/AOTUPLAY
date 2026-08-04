@@ -398,6 +398,7 @@ async def play_commnd(
                 plist_type,
                 "c" if channel else "g",
                 "f" if fplay else "d",
+                chat_id=message.chat.id,
             )
             await mystic.delete()
             await message.reply_photo(
@@ -434,6 +435,7 @@ async def play_commnd(
                     message.from_user.id,
                     "c" if channel else "g",
                     "f" if fplay else "d",
+                    chat_id=message.chat.id,
                 )
                 await mystic.delete()
                 await message.reply_photo(
