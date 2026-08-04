@@ -252,6 +252,36 @@ class YouTubeAPI:
         thumbnail = result[query_type]["thumbnails"][0]["url"].split("?")[0]
         return title, duration_min, thumbnail, vidid
 
+    async def related(self, videoid: str, exclude_ids: Union[list, set, None] = None):
+        exclude_ids = set(exclude_ids or [])
+        exclude_ids.add(videoid)
+        try:
+            seed = VideosSearch(self.base + videoid, limit=1)
+            seed_result = (await seed.next())["result"]
+            if not seed_result:
+                return None
+            title = seed_result[0]["title"]
+        except Exception:
+            return None
+        try:
+            search = VideosSearch(title, limit=10)
+            candidates = (await search.next())["result"]
+        except Exception:
+            return None
+        for item in candidates:
+            vid = item.get("id")
+            duration_min = item.get("duration")
+            if not vid or not duration_min or vid in exclude_ids:
+                continue
+            return {
+                "title": item["title"],
+                "vidid": vid,
+                "duration_min": duration_min,
+                "thumb": item["thumbnails"][0]["url"].split("?")[0],
+                "link": item["link"],
+            }
+        return None
+
     async def download(
         self,
         link: str,
