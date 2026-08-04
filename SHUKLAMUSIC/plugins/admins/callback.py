@@ -15,7 +15,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from SHUKLAMUSIC import YouTube, app
-from SHUKLAMUSIC.core.call import SHUKLA
+from SHUKLAMUSIC.core.call import SHUKLA, queue_autoplay_song
 from SHUKLAMUSIC.misc import SUDOERS, db
 from SHUKLAMUSIC.utils.database import (
     get_active_chats,
@@ -212,19 +212,22 @@ async def del_back_playlist(client, CallbackQuery, _):
                 if popped:
                     await auto_clean(popped)
                 if not check:
-                    await CallbackQuery.edit_message_text(
-                        f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🎄\n│ \n└ʙʏ : {mention} 🥀"
-                    )
-                    await CallbackQuery.message.reply_text(
-                        text=_["admin_6"].format(
-                            mention, CallbackQuery.message.chat.title
-                        ),
-                        reply_markup=close_markup(_),
-                    )
-                    try:
-                        return await SHUKLA.stop_stream(chat_id)
-                    except:
-                        return
+                    if await queue_autoplay_song(chat_id, popped):
+                        check = db.get(chat_id)
+                    else:
+                        await CallbackQuery.edit_message_text(
+                            f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🎄\n│ \n└ʙʏ : {mention} 🥀"
+                        )
+                        await CallbackQuery.message.reply_text(
+                            text=_["admin_6"].format(
+                                mention, CallbackQuery.message.chat.title
+                            ),
+                            reply_markup=close_markup(_),
+                        )
+                        try:
+                            return await SHUKLA.stop_stream(chat_id)
+                        except:
+                            return
             except:
                 try:
                     await CallbackQuery.edit_message_text(
