@@ -7,7 +7,7 @@ import config
 from SHUKLAMUSIC.utils.formatters import time_to_seconds
 
 
-def track_markup(_, videoid, user_id, channel, fplay):
+def track_markup(_, videoid, user_id, channel, fplay, chat_id=None):
     buttons = [
         [
             InlineKeyboardButton(
@@ -26,8 +26,8 @@ def track_markup(_, videoid, user_id, channel, fplay):
                 style=ButtonStyle.SUCCESS,
             ),
             InlineKeyboardButton(
-                text="⭐ Fav Playlist",
-                callback_data=f"FavPlaylist {videoid}|{user_id}",
+                text="🔁 Autoplay On/Off",
+                callback_data=f"ADMIN Autoplay|{chat_id if chat_id else user_id}",
                 style=ButtonStyle.PRIMARY,
             ),
         ],
@@ -79,7 +79,7 @@ def stream_markup_timer(_, chat_id, played, dur):
             InlineKeyboardButton(text="🔂 Loop", callback_data=f"ADMIN Loop|{chat_id}", style=ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="⭐ Fav Playlist", callback_data=f"FavPlaylist {chat_id}", style=ButtonStyle.SUCCESS),
+            InlineKeyboardButton(text="🔁 Autoplay On/Off", callback_data=f"ADMIN Autoplay|{chat_id}", style=ButtonStyle.SUCCESS),
         ],
         [InlineKeyboardButton(text=" ᴄʟᴏsᴇ ▣", callback_data="close", style=ButtonStyle.DANGER, icon_custom_emoji_id=5408832111773757273)],
     ]
@@ -101,14 +101,14 @@ def stream_markup(_, chat_id):
             InlineKeyboardButton(text="🔂 Loop", callback_data=f"ADMIN Loop|{chat_id}", style=ButtonStyle.PRIMARY),
         ],
         [
-            InlineKeyboardButton(text="⭐ Fav Playlist", callback_data=f"FavPlaylist {chat_id}", style=ButtonStyle.SUCCESS),
+            InlineKeyboardButton(text="🔁 Autoplay On/Off", callback_data=f"ADMIN Autoplay|{chat_id}", style=ButtonStyle.SUCCESS),
         ],
         [InlineKeyboardButton(text=" ᴄʟᴏsᴇ ▣", callback_data="close", style=ButtonStyle.DANGER, icon_custom_emoji_id=5408832111773757273)],
     ]
     return buttons
 
 
-def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
+def playlist_markup(_, videoid, user_id, ptype, channel, fplay, chat_id=None):
     buttons = [
         [
             InlineKeyboardButton(
@@ -127,8 +127,8 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
                 style=ButtonStyle.PRIMARY,
             ),
             InlineKeyboardButton(
-                text="⭐ Fav Playlist",
-                callback_data=f"FavPlaylist {videoid}|{user_id}",
+                text="🔁 Autoplay On/Off",
+                callback_data=f"ADMIN Autoplay|{chat_id if chat_id else user_id}",
                 style=ButtonStyle.SUCCESS,
             ),
         ],
