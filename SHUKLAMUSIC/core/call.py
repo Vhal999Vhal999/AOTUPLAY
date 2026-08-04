@@ -26,6 +26,7 @@ from SHUKLAMUSIC.misc import db
 from SHUKLAMUSIC.utils.database import (
     add_active_chat,
     add_active_video_chat,
+    get_autoplay,
     get_lang,
     get_loop,
     group_assistant,
@@ -39,11 +40,52 @@ from SHUKLAMUSIC.utils.exceptions import AssistantErr
 from SHUKLAMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
 from SHUKLAMUSIC.utils.inline.play import stream_markup
 from SHUKLAMUSIC.utils.stream.autoclear import auto_clean
+from SHUKLAMUSIC.utils.stream.queue import put_queue
 from SHUKLAMUSIC.utils.thumbnails import get_thumb as gen_thumb
 from strings import get_string
 
 autoend = {}
 counter = {}
+autoplay_history = {}
+
+
+async def queue_autoplay_song(chat_id: int, popped: dict) -> bool:
+    """If autoplay is ON for this chat, fetch a related song and push it
+    into the queue so playback continues. Returns True if a song was queued."""
+    if not popped:
+        return False
+    try:
+        if not await get_autoplay(chat_id):
+            return False
+        vidid = popped.get("vidid")
+        if not vidid:
+            return False
+        history = autoplay_history.setdefault(chat_id, [])
+        related = await YouTube.related(vidid, exclude_ids=history)
+        if not related:
+            return False
+        file_path, direct = await YouTube.download(
+            related["vidid"], None, videoid=True
+        )
+        if not file_path:
+            return False
+        await put_queue(
+            chat_id,
+            popped.get("chat_id", chat_id),
+            file_path if direct else f"vid_{related['vidid']}",
+            related["title"],
+            related["duration_min"],
+            "🔁 Autoplay",
+            related["vidid"],
+            popped.get("user_id", 0) or 0,
+            "audio",
+        )
+        history.append(related["vidid"])
+        if len(history) > 20:
+            del history[: len(history) - 20]
+        return True
+    except Exception:
+        return False
 
 async def _clear_(chat_id: int):
     db[chat_id] = []
@@ -321,8 +363,11 @@ class Call(PyTgCalls):
                 await set_loop(chat_id, loop)
             await auto_clean(popped)
             if not check:
-                await _clear_(chat_id)
-                return await client.leave_call(chat_id, close=False)
+                if await queue_autoplay_song(chat_id, popped):
+                    check = db.get(chat_id)
+                else:
+                    await _clear_(chat_id)
+                    return await client.leave_call(chat_id, close=False)
         except Exception:
             try:
                 await _clear_(chat_id)
